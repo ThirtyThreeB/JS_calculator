@@ -17,7 +17,7 @@
 	text-align: right;
 }
 
-.buttons {
+#buttons {
 	width: 90%;
 	margin: 0 auto;
 	
@@ -27,7 +27,7 @@
 	/*border: 1px solid grey;*/
 }
 
-.buttons li {
+#buttons li {
 	float: left;
 		/*width: 33.3%;*/
 	list-style: none;
