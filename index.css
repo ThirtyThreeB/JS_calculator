@@ -1,42 +1,60 @@
 
+
+
 #panel {
-	box-sizing: border-box;
+	/*box-sizing: border-box;*/
 	margin: auto;
-  width: 300px;
-  height: 400px;
-  padding: 15px;    
-  border: 1px solid blue;
+  width: 220px;
+  height: 320px;
+  padding: 25px;    
+  border: 1px solid #607d8b;
+  border-radius: 5px;
 }
 
 #displayCalc{
+	font-family: 'Exo', sans-serif;
 	margin: auto;
-	padding: 10px
-	width: 200px;
+	/*padding: 10px;*/
 	height: 25px;
-	border:1px solid red;
+	width: 200px;
+		border-radius: 5px 5px 0 0;
+
+	border-top: 1px solid #607d8b;
+	border-left: 1px solid #607d8b;
+	border-right: 1px solid #607d8b;
 	text-align: right;
+	background-color: #cedeeb;
 }
 
 #displayAns{
+	font-family: 'Exo', sans-serif;
 	margin: auto;
-	padding: 10px
+	border-radius: 0 0 5px 5px;
 	width: 200px;
 	height: 25px;
-	border:1px solid red;
+	border-bottom: 1px solid #607d8b;
+	border-left: 1px solid #607d8b;
+	border-right: 1px solid #607d8b;
 	text-align: right;
+	background-color: #cedeeb;
 }
 
 #buttons {
-	width: 90%;
+
+	font-family: 'Supermercado One', cursive;
+	font-size: 30px;
+	width: 200px;
 	margin: 0 auto;
 	
-	padding: 1px;
+	padding: 10px;
 	height: 200px;
 	width: 200px;
 	/*border: 1px solid grey;*/
 }
 
 #buttons li {
+	    
+	border-radius: 5px;
 	float: left;
 		/*width: 33.3%;*/
 	list-style: none;
@@ -45,9 +63,17 @@
   height: 20px;
   margin: 0 auto;
   padding: 14px;
-	border:1px solid red;
+	border:1px solid #607d8b;
 }
 	
 .buttons li.first {
 		clear:left;
+}
+
+.digit {
+		background-color: #8080804d;
+
+}
+.operator {
+	background-color: #03a9f480;
 }

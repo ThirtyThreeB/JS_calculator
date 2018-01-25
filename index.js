@@ -1,17 +1,18 @@
 /*jslint devel: true */
 "use strict";
 
-//on click push val into array
-//use loop to assign eventhandler to all buttons
 let memArray = [];
-//let displayStr = memArray.join();
 
 
 let btnClick = (e) => {
+	console.log('test');
 	let justClicked = e.target.innerText;
 
 	if (memArray.includes(".") === false){
 		document.querySelector('#decimal').addEventListener('click', btnClick);
+	}
+	if (memArray.includes("=") === false){
+		document.querySelector('#equals').addEventListener('click', operate);
 	}
 	
 	if(justClicked.match(/[.]/)){
@@ -23,16 +24,10 @@ let btnClick = (e) => {
 		memArray.push(justClicked);
 	}
 	else {
-		//enableOps();
-		console.log("last");
 		memArray.push(justClicked);
 		enableOps();
-	// 	if (memArray.includes(".") === false){
-	// 	document.querySelector('#decimal').addEventListener('click', btnClick);
-	// }
 	}
-	console.log("memArray=",memArray.join(''));
-	document.getElementById("displayCalc").innerHTML = memArray.join('');
+document.getElementById("displayCalc").innerHTML = memArray.join('');
 };
 
 
@@ -49,7 +44,6 @@ let disableOps = () => {
 	for(var i = 0; i < operators.length; i++) {
 		operators[i].removeEventListener("click", btnClick);
 		
- //operators.forEach(function)
 }
 console.log("disabled");
 };
@@ -63,22 +57,25 @@ let enableOps = () => {
 console.log("enabled");
 };
 
+
 let operate = () => {// jshint ignore:line
   document.getElementById("displayAns").innerHTML = eval(memArray.join(''));// jshint ignore:line
 };
 
+
 let clearDisplay = () => {// jshint ignore:line
-  memArray = [];
-  document.getElementById("displayCalc").innerHTML = 0;
-  document.getElementById("displayAns").innerHTML =0;
+	memArray = [];
+	document.querySelector('#equals').removeEventListener('click', operate);
+	document.getElementById("displayCalc").innerHTML = 0;
+	document.getElementById("displayAns").innerHTML =0;
 };
 
-//display values in array as string in display
 
-//operate() with =
+let backSpace = () => {// jshint ignore:line
+	memArray.pop();
+	document.getElementById("displayCalc").innerHTML = memArray.join('');
+};
 
-//clear() array and display
+let el = document.getElementsById("buttons");
 
-
-
-//problems  clicks just off buttons in margin result in crap
+el.addEventListener('keydown', btnClick);
