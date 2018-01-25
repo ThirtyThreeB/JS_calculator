@@ -10,7 +10,8 @@
 <body>
   <div>
     <div id="panel">
-      <div id="display">0</div>
+      <div id="displayCalc">0</div>
+      <div id="displayAns">0</div>
 
       <ul id="buttons">
 
@@ -28,9 +29,9 @@
         <li class="operator">-</li>
         <li class="first digit">0</li>
         <li id="decimal">.</li>
-        <li id="equals">=</li>
+        <li id="equals" onclick="operate()">=</li>
         <li class="operator">+</li>
-        <li id="clear" class="first">Clear</li>
+        <li id="clear" class="first" onclick="clearDisplay()">Clear</li>
 
      </ul>
      <!--  <div id="display">0</div>
